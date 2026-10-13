@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:cgr_core_flutter/cgr_core_flutter.dart';
 
 class HomeScreen extends StatelessWidget {
   const new({super.key});
@@ -6,8 +6,11 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: Center(child: Text('CFM Admin'),),
+      drawer: Drawer(
+        child: SafeArea(child: Column(children: [CGRThemeWidget()])),
+      ),
+      appBar: AppBar(title: Text('CFM Admin')),
+      body: Center(child: Text('CFM Admin')),
     );
   }
 }
