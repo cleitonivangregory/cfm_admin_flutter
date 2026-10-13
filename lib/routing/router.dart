@@ -6,9 +6,22 @@ GoRouter get routerConfig {
   return GoRouter(
     initialLocation: AppRoutes.splash,
     routes: [
-      GoRoute(path: AppRoutes.splash, builder: (context, state) {
-        return CGRSplashScreen(acronym: 'CFM', appName: 'Clínica Fisio Mais', nextScreen: AppRoutes.home,);
-      }),
+      GoRoute(
+        path: AppRoutes.splash,
+        builder: (context, state) {
+          return CGRSplashScreen(
+            acronym: 'CFM',
+            appName: 'Clínica Fisio Mais',
+            nextScreen: AppRoutes.welcome,
+          );
+        },
+      ),
+      GoRoute(
+        path: AppRoutes.welcome,
+        builder: (context, state) {
+          return CGRWelcomeScreen(nextScreen: AppRoutes.home);
+        },
+      ),
       GoRoute(
         path: AppRoutes.home,
         builder: (context, state) {
